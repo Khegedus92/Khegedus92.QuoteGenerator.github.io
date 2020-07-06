@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Quote generator</title>
+</head>
+<body>
+
+  <div class="jediAndSithQuotes">
+
+    <div class="jedi">
+      
+      <div class="jediInput">
+        <!--Clicking on the button will show the quote(s).-->
+        <img src="images/jedi.png" id="jediNewQuote" type="button" onclick="jediNewQuote()">
+        <!--Indicator to select the desired quantity of the quotes.-->
+        <input id="jediQuantity" type="number" name="quantity" min="1" max="5" value="1">
+      </div>
+
+      <div id="jediQuoteDisplay">
+        <!--Quote will display here.-->
+      </div>
+
+    </div>
+
+    <div class="sith">
+      
+        <div class="sithInput">
+        <!--Indicator to select the desired quantity of the quotes.-->
+        <input id="sithQuantity" type="number" name="quantity" min="1" max="5" value="1">
+        <!--Clicking on the button will show the quote(s).-->
+        <img src="images/sith.png" id="sithNewQuote"  onclick="sithNewQuote()">
+      </div>
+
+      <div id="sithQuoteDisplay">
+        <!--Quote will display here.-->
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

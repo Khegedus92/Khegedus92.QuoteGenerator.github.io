@@ -1,0 +1,28 @@
+@import "variables";
+@import "mixins";
+
+* {
+    box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
+}
+
+body {
+    background-image: url("D:/images/background.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+    @include mQ(767px, 576px) {
+        background-repeat: space;
+    }
+}
+
+.jediAndSithQuotes {
+    display: inline-block;
+    width: 100%;
+    .jedi {
+        @include jedi;
+    }
+    .sith {
+       @include sith; 
+    }
+}

@@ -1,0 +1,198 @@
+@import "variables";
+
+@mixin jedi {
+    display: inline-block;
+    text-align: center;
+    width: 45%;
+    margin-left: 1rem;
+    float: left;
+    border-radius: 15px;
+    @include mQ(576px, 1px) {
+        width: 100%;
+        display: inline;
+        margin: auto;
+    }
+    #jediQuoteDisplay {
+        background-color: $color-jediDisplay;
+        font-size: 24px;
+        color: white;
+        vertical-align: middle;
+        margin-top: 14px;
+        @include mQ(1200px, 992px) {
+            margin-top: 7px;
+        }
+        @include mQ(991px, 768px) {
+            margin-top: 8px;
+            
+        }
+        @include mQ(767px, 576px) {
+            justify-self: center;
+            margin: auto;
+            font-size: 18px;
+            margin-top: 14px;
+            margin-bottom: 20px;
+        }
+        @include mQ(575px, 1px) {
+            justify-self: center;
+            margin: auto;
+            font-size: 16px;
+            margin-top: 14px;
+            margin-bottom: 20px;
+            background-color: darken($color-jediDisplay, 30);
+        }
+        
+    }
+    #jediQuantity {
+        width: 40px;
+        height: 26px;
+        vertical-align: middle;
+        background-color: $color-jediDisplay;
+        color: white;
+        font-family: 'Russo One', sans-serif;
+        font-size: 24px;
+        border: none;
+        text-align: center;
+        @include mQ(576px, 1px) {
+            margin-left: 15px;
+        }
+    }
+    #jediNewQuote {
+        width: 70px;
+        height: 70px;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 70px;
+        margin: 0px 30px 0px 6px;
+        &:hover {
+            transition: all 0.4s;
+            box-shadow: -3px 3px 3px 3px $color-jediDisplay, -6px 6px 6px 6px $color-jediDisplay, -9px 9px 9px 9px $color-jediDisplay;
+        }
+        @include mQ(1366px, 1200px) {
+            width: 60px;
+            height: 60px;
+            border-radius: 60px;
+        }
+        @include mQ(1199px, 992px) {
+            width: 45px;
+            height: 45px;
+            border-radius: 45px;
+        }
+        @include mQ(991px, 768px) {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+        }
+        @include mQ(767px, 576px) {
+            justify-self: center;
+            margin: auto;
+        }
+        @include mQ(575px, 1px) {
+            justify-self: center;
+            margin: auto;
+        }
+        
+    }
+}
+
+@mixin sith {
+    display: inline-block;
+    text-align: center;
+    width: 45%;
+    margin-right: 1rem;
+    float: right;
+    border-radius: 15px;
+    @include mQ(576px, 1px) {
+        width: 100%;
+        display: inline;
+        margin: auto;
+    }
+    #sithQuoteDisplay {
+        background-color: $color-sithDisplay;
+        font-size: 24px;
+        color: white;
+        vertical-align: middle;
+        margin-top: 14px;
+        @include mQ(1199px, 992px) {
+            margin-top: 7px;
+        }
+        @include mQ(991px, 768px) {
+            margin-top: 8px;
+        }
+        @include mQ(767px, 577px) {
+            justify-self: center;
+            margin: auto;
+            font-size: 18px;
+            margin-top: 14px;
+            margin-bottom: 20px;
+        }
+        @include mQ(576px, 1px) {
+            justify-self: center;
+            margin: auto;
+            font-size: 16px;
+            margin-top: 14px;
+            margin-bottom: 20px;
+        }
+    }
+    #sithQuantity {
+        width: 40px;
+        height: 26px;
+        vertical-align: middle;
+        background-color: $color-sithDisplay;
+        color: white;
+        font-family: 'Russo One', sans-serif;
+        font-size: 24px;
+        border: none;
+        text-align: center;
+        @include mQ(575px, 1px) {
+            margin-right: 15px;
+        }
+    }
+    #sithNewQuote {
+        width: 70px;
+        height: 70px;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 70px;
+        margin: 0px 6px 0px 30px;
+        &:hover {
+            transition: all 0.4s;
+            box-shadow: 3px 3px 3px 3px $color-sithDisplay, 6px 6px 6px 6px $color-sithDisplay, 9px 9px 9px 9px $color-sithDisplay;
+        }
+        @include mQ(1366px, 1200px) {
+            width: 60px;
+            height: 60px;
+            border-radius: 60px;
+        }
+        @include mQ(1199px, 992px) {
+            width: 45px;
+            height: 45px;
+            border-radius: 45px;
+        }
+        @include mQ(991px, 768px) {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;   
+        }
+        @include mQ(767px, 576px) {
+            justify-self: center;
+            margin: auto;
+        }
+        @include mQ(575px, 1px) {
+            justify-self: center;
+            margin: auto;
+        }
+    }
+}
+
+@mixin mQ ($arg...) {
+    @if length($arg) == 1{
+        @media screen and (max-width: nth($arg, 1)) {
+            @content;
+        }
+    }
+    @if length($arg) == 2 {
+        @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)) {
+            @content;
+        }
+    }
+}
